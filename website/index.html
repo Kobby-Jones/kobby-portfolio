@@ -234,32 +234,40 @@
       <h2 class="text-center text-uppercase text-light mb-4 fw-bold">Contact Me</h2>
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <form action="https://formspree.io/f/xoverjvk"
-          method="POST">
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+            <!-- Hidden input to help Netlify recognize the form -->
+            <input type="hidden" name="form-name" value="contact" />
+          
+            <!-- Honeypot field (anti-spam) -->
+            <p hidden>
+              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+          
             <div class="mb-3">
               <label for="name" class="form-label text-light fw-semibold">Full Name</label>
               <input type="text" class="form-control" name="name" id="name" placeholder="Enter your full name" required>
             </div>
-  
+          
             <div class="mb-3">
               <label for="email" class="form-label text-light fw-semibold">Email Address</label>
               <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" required>
             </div>
-  
+          
             <div class="mb-3">
               <label for="subject" class="form-label text-light fw-semibold">Subject</label>
               <input type="text" class="form-control" name="subject" id="subject" placeholder="Enter subject">
             </div>
-  
+          
             <div class="mb-3">
               <label for="message" class="form-label text-light fw-semibold">Message</label>
               <textarea class="form-control" id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
             </div>
-  
+          
             <div class="text-center">
-              <button type="button" type="submit" class="btn btn-outline-warning">Send Message</button>
+              <button type="submit" class="btn btn-outline-warning">Send Message</button>
             </div>
           </form>
+          
         </div>
       </div>
     </div>
